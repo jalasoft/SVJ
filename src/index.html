@@ -15,39 +15,8 @@
 
 		<script>
 			onLoadCompleted(function() {
-
-				var navigation = new Navigation("header nav");
-
-				var gallery = new Gallery("#photos", {
-					title: "Pokus",
-					images: [
-						{
-							title: "barak",
-							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
-							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
-						},
-						{
-							title: "barak",
-							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
-							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
-						},
-						{
-							title: "barak",
-							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
-							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
-						},
-						{
-							title: "barak",
-							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
-							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
-						},
-						{
-							title: "barak",
-							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
-							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
-						},
-					]
-				})
+				loadNavigation();
+				loadGalleries();
 			});
 		</script>
 	</head>

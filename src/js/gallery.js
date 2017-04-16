@@ -1,30 +1,17 @@
-var Gallery = function(connectionPoint, config) {
+var Gallery = function(selector, config) {
 	this.container = document.createElement("section");
 	this.container.classList.add("gallery");
 
-	const control = document.createElement("div");
-	control.classList.add("control");
+	this.status = config.expanded ? "expanded" : "collapsed";
 
+	var control = this.createControl(config.title);
 	this.container.appendChild(control);
 
-	const title = document.createElement("p");
-	title.innerHTML = config.title;
-
-	const controlImage = document.createElement("img");
-	controlImage.src = "images/icon-chevron-down.png";
-	controlImage.addEventListener("click", e => this.onToggle());
-	//controlImage.classList.add("expanded");
-
-	control.appendChild(title);
-	control.appendChild(controlImage);
-
+	var connectionPoint = document.querySelector(selector);
 	connectionPoint.appendChild(this.container);
 
-	const preview = document.createElement("div");
+	const preview = document.createElement("section");
 	preview.classList.add("preview");
-
-	this.status = "expanded";
-
 
 	config.images.forEach(image => {
 		const figure = this.newImagePreview(image.title, image.preview_source, image.full_source);
@@ -32,6 +19,24 @@ var Gallery = function(connectionPoint, config) {
 	});
 
 	this.container.appendChild(preview);
+}
+
+Gallery.prototype.createControl = function(titleText) {
+	var control = document.createElement("div");
+	control.classList.add("control");
+
+	var title = document.createElement("p");
+	title.innerHTML = titleText;
+
+	const controlImage = document.createElement("img");
+	controlImage.src = "images/control-image.png";
+	controlImage.addEventListener("click", e => this.onToggle());
+	controlImage.innerHTML = titleText;
+
+	control.appendChild(title);
+	control.appendChild(controlImage);
+
+	return control;
 }
 
 Gallery.prototype.newImagePreview = function(title, preview, full) {

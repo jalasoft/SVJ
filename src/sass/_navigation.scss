@@ -1,0 +1,50 @@
+
+	nav {
+		ul {
+			margin: 5px 0px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+
+			li {
+				flex-grow: 1;
+				flex-basis: auto;
+			}
+
+
+
+			li > a {
+				display: inline-block;
+				width: 100%;
+				padding: 12px 0px;
+				text-align: center;
+				color: white;
+				text-decoration: none;
+				font-family: $font-family;
+				font-size: 2em;
+				@include background-gradient($start-color, $end-color);
+				@include border-radius(5px);
+			}
+
+			li > a:hover {
+				@include background-gradient($end_color, $start-color);
+			}
+
+			li > a.selected {
+				font-weight: bold;
+				color: #ffff99;
+			}
+		}
+
+		@media all and (max-width: 600px) {
+			ul {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+
+				li > a {
+					font-size: 1.0em;
+				}
+			}
+		}
+	}

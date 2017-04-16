@@ -1,0 +1,98 @@
+
+
+	.gallery {
+		//border: 0px solid #4d2600;
+		margin-bottom: 20px;
+		@include border-top-radius(5px);
+
+		.control {
+			height: 50px;
+			//@include top-border-radius(5px);
+			background: linear-gradient(to right, $end_color, $start_color);
+			//border: 1px solid black;
+			
+			p {
+				font-size: 2em;
+				font-family: $font-family;
+				font-weight: bold;
+				color: white;
+				float: left;
+				padding-top: 5px;
+				padding-left: 10px;
+				
+			}
+
+			img {
+				float: right;
+				vertical-align: middle;
+				padding: 9px;
+				cursor: pointer;
+			}
+		}
+		
+		.control::after {
+				clear: both;
+		}
+
+		.preview {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			background-color: #f9f2ec;
+
+			figure {
+				margin: 10px;
+				cursor: pointer;
+				border: 1px solid #4d2600;
+			
+				img {
+					vertical-align: middle;
+				}
+
+				figcaption {
+					display: none;
+				}
+			}
+
+		}		
+	}
+
+	.gallery.expanded {
+		.control {
+			img {
+				animation-name: expand;
+				animation-duration: 2s;
+				animation-fill-mode: forwards;
+			}
+		}
+
+		@keyframes expand {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.gallery.collapsed {
+		.control {
+			img {
+				animation-name: collapse;
+				animation-duration: 2s;
+				animation-fill-mode: forwards;
+			}
+		}
+
+		@keyframes collapse {
+			from {
+				transform: rotate(180deg);
+			}
+
+			to {
+				transform: rotate(0deg);
+			}
+		}
+	}
