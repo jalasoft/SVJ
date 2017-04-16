@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF8"/>
+		<link href="https://fonts.googleapis.com/css?family=Amatica+SC|Life+Savers" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
+
+		<!-- begin:css -->
+		<!-- end:css -->
+
+		 <!-- begin:js -->
+    	 <!-- end:js -->
+		
+
+
+		<script>
+			onLoadCompleted(function() {
+
+				var navigation = new Navigation("header nav");
+
+				var gallery = new Gallery("#photos", {
+					title: "Pokus",
+					images: [
+						{
+							title: "barak",
+							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
+							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
+						},
+						{
+							title: "barak",
+							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
+							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
+						},
+						{
+							title: "barak",
+							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
+							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
+						},
+						{
+							title: "barak",
+							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
+							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
+						},
+						{
+							title: "barak",
+							preview_source: "images/building/preview/2015_07_24-20_10_31.jpg",
+							full_source: "images/building/full/2015_07_24-20_10_31.jpg"
+						},
+					]
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<header class="header">
+				<div class="title">Sdružení vlastníků</div>
+				<address>Antonína Dvořáka 1111, Kolín</address>
+				<img src="images/building2.gif"/>
+				<nav class="nav">
+					<ul>
+						<li><a href="#news">Aktuality</a></li>
+						<li><a href="#photos">Stavba</a></li>
+						<li><a href="#stanovy">Stanovy</a></li>
+						<li><a href="#contacts">Kontakty</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<section class="content">
+					<article id="news">
+						Tady budou novinky
+					</article>
+					<article id="photos">
+						tady budou fotky
+					</article>
+					<article id="contacts">
+						Tady budou kontakty
+					</article>
+					<article id="stanovy">
+						Tady budou stanovy
+					</article>
+				</section>
+			</main>
+		</div>
+	<body>
+</html>

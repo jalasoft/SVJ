@@ -1,0 +1,4 @@
+build
+node_modules
+src/images/building
+.sass-cache

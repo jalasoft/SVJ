@@ -1,0 +1,132 @@
+.gallery {
+	border: 1px solid black;
+}
+
+.gallery .control {
+	background-color: rgb(0, 0, 153);
+	height: 45px;
+}
+
+.gallery .control p {
+	float: left;
+	color: white;
+	font-size: 25px;
+	padding: 10px 0px 10px 20px;
+}
+
+.gallery .control img {
+	float: right;
+	padding: 7px 7px 7px 7px;
+	cursor: pointer;
+}
+
+.gallery .control::after {
+	clear: both;
+}
+
+.gallery.expanded .control img {
+	animation-name: expand;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+	from {
+		transform: rotate(180deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+.gallery.collapsed .control img {
+	animation-name: collapse;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes collapse {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+.gallery {
+	position: relative;
+}
+
+.gallery.collapsed .preview {
+	animation-name: collapse_preview;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes collapse_preview {
+	from {
+		position: absolute;
+		top: 0px;
+	}
+
+	to {
+		position: absolute;
+		top: -200px;
+	}
+}
+
+.gallery.expanded .preview {
+	animation-name: expand_preview;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes expand_preview {
+	from {
+		position: absolute;
+		top: -200px;
+	}
+
+	to {
+		position: absolute;
+		top: 0px;
+	}
+}
+
+.gallery .preview {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.gallery .preview figcaption {
+	display: none;
+}
+
+.gallery .preview figure {
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.gallery .preview figure img {
+	vertical-align: middle;
+}
+
+.gallery .preview figure {
+	position: relative;
+}
+
+.gallery .preview figure:hover::after {
+	content: "h";
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 4px;
+	border: 1px solid black;
+}
